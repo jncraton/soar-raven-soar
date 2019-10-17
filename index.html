@@ -12,7 +12,11 @@
         font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
         background-image: url(https://www.anderson.edu/wp-content/uploads/aerial2-C.jpg);
       }
-      section {
+      article {
+        padding: 0 20px;
+        background:rgba(200,200,200,0.6);
+      }
+      section, article {
         width:720px; 
         margin:0 auto;
         height:100%;
@@ -21,6 +25,7 @@
         margin: 10px 0;
         background: #eee; 
         display: block;
+        opacity: .8;
       }
       h1,#lives {
         float:left;
@@ -67,6 +72,7 @@
 </section>
 </header>
 
+<article>
 <section>
 <h1>Soar, Raven, Soar</h1>
 
@@ -78,8 +84,10 @@
 <img src="au-cs-logo.png" width="120">
 </footer>
 
-<img style="display:none" id="raven" src="raven.png">
 </section>
+</article>
+
+<img style="display:none" id="raven" src="raven.png">
 
 <script>
     var canvas = document.getElementById("myCanvas");
