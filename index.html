@@ -2,16 +2,84 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Gamedev Canvas Workshop - lesson 10: finishing up</title>
-    <style>body {width:720px; margin:0 auto;}* { padding: 0; margin: 0; text-align:right;} canvas { background: #eee; display: block; margin: 0 auto; }</style>
+    <title>Soar, Raven, Soar</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      body {
+        font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
+        background-image: url(https://www.anderson.edu/wp-content/uploads/aerial2-C.jpg);
+      }
+      section {
+        width:720px; 
+        margin:0 auto;
+        height:100%;
+      }
+      canvas {
+        margin: 10px 0;
+        background: #eee; 
+        display: block;
+      }
+      h1,#lives {
+        float:left;
+        margin: 10px 0;
+      }
+      a {
+        display: inline-block;
+        padding:1.2em 20px 0.8em;
+        background: #f57920;
+        box-shadow: 0 5px 2px #d56a2a inset;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size:12px;
+      }
+      header {
+        background:rgba(51,51,51,0.6);
+        height: 100px;
+        border-bottom: 1px solid #f57920;
+      }
+      #logo {
+        max-height: 72%;
+        float:left;
+      }
+      nav, #lives {
+        float:right;
+      }
+      footer {
+        text-align:right;
+      }
+    </style>
 </head>
 <body>
 
+<header>
+<section>
+<img src="https://www.anderson.edu/wp-content/uploads/AU_logo_H_OBW-1.svg" alt="Anderson University" id="logo">
+
+<nav>
+<a href="https://www.anderson.edu/admissions/visit/">Visit</a> 
+<a href="http://admissions.anderson.edu/apply">Apply</a>
+<nav>
+</section>
+</header>
+
+<section>
+<h1>Soar, Raven, Soar</h1>
+
+<span id=lives></span>
+
 <canvas id="myCanvas" width="720" height="480"></canvas>
 
-<img style="display:none" id="raven" src="raven.png">
-
+<footer>
 <img src="au-cs-logo.png" width="120">
+</footer>
+
+<img style="display:none" id="raven" src="raven.png">
+</section>
 
 <script>
     var canvas = document.getElementById("myCanvas");
@@ -31,9 +99,8 @@
     var brickWidth = 75;
     var brickHeight = 20;
     var brickPadding = 10;
-    var brickOffsetTop = 60;
+    var brickOffsetTop = 30
     var brickOffsetLeft = 30;
-    var score = 0;
     var lives = 3;
     var color = "#f57920";
 
@@ -79,7 +146,6 @@
                     if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
                         dy = -dy;
                         b.status = 0;
-                        score++;
                     }
                 }
             }
@@ -115,15 +181,8 @@
             }
         }
     }
-    function drawScore() {
-        ctx.font = "32px Arial";
-        ctx.fillStyle = color;
-        ctx.fillText("Score: "+score, 8, 30);
-    }
     function drawLives() {
-        ctx.font = "32px Arial";
-        ctx.fillStyle = color;
-        ctx.fillText("Lives: "+lives, canvas.width-120, 30);
+        document.querySelector("#lives").textContent = 'Lives: ' + lives
     }
 
     function draw() {
@@ -131,7 +190,6 @@
         drawBricks();
         drawBall();
         drawPaddle();
-        drawScore();
         drawLives();
         collisionDetection();
 
