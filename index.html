@@ -102,16 +102,12 @@
 <img style="display:none" id="raven" src="raven.png">
 
 <script>
+    var x, y, dx, dy, paddleX;
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     var ballRadius = 12;
-    var x = canvas.width/2;
-    var y = canvas.height-30;
-    var dx = 2;
-    var dy = -2;
     var paddleHeight = 10;
     var paddleWidth = 75;
-    var paddleX = (canvas.width-paddleWidth)/2;
     var rightPressed = false;
     var leftPressed = false;
     var brickRowCount = 8;
@@ -132,9 +128,19 @@
         }
     }
 
+    restart()
+
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
     document.addEventListener("mousemove", mouseMoveHandler, false);
+
+    function restart() {
+        x = canvas.width/2;
+        y = canvas.height-30;
+        dx = 1 + 2*Math.random();
+        dy = -4 - dx;
+        paddleX = (canvas.width-paddleWidth)/2;
+    }
 
     function keyDownHandler(e) {
         if(e.keyCode == 39) {
@@ -231,11 +237,7 @@
                     document.location.reload();
                 }
                 else {
-                    x = canvas.width/2;
-                    y = canvas.height-30;
-                    dx = 3;
-                    dy = -3;
-                    paddleX = (canvas.width-paddleWidth)/2;
+                    restart()
                 }
             }
         }
