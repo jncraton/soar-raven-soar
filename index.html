@@ -21,7 +21,7 @@
         background:rgba(200,200,200,0.8);
       }
       section, article {
-        width:520px; 
+        max-width:720px; 
         margin:0 auto;
         height:100%;
       }
@@ -161,7 +161,7 @@
         }
     }
     function mouseMoveHandler(e) {
-        var relativeX = e.clientX - canvas.offsetLeft;
+        var relativeX = (e.clientX - canvas.offsetLeft) * (canvas.width / canvas.offsetWidth);
         if(relativeX > 0 && relativeX < canvas.width) {
             paddleX = relativeX - paddleWidth/2;
         }
