@@ -20,12 +20,12 @@
         background:rgba(200,200,200,0.8);
       }
       section, article {
-        width:720px; 
+        width:520px; 
         margin:0 auto;
         height:100%;
       }
       canvas {
-        margin: 10px 0;
+        margin: 10px auto;
         background: #eee; 
         display: block;
         opacity: .8;
@@ -90,7 +90,7 @@
 
 <span id=lives></span>
 
-<canvas id="myCanvas" width="720" height="480"></canvas>
+<canvas id="myCanvas" width="480" height="720"></canvas>
 
 <footer>
 <span>Built with ❤️ using code from the <a href="https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript">Mozilla Foundation</a> and MDN contributors.</span>
@@ -110,8 +110,8 @@
     var paddleWidth = 75;
     var rightPressed = false;
     var leftPressed = false;
-    var brickRowCount = 8;
-    var brickColumnCount = 3;
+    var brickRowCount = 5;
+    var brickColumnCount = 8;
     var brickWidth = 75;
     var brickHeight = 20;
     var brickPadding = 10;
