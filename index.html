@@ -58,17 +58,9 @@
   var ravens_harmed = 0;
   var ravens_freed = 0;
   var paused = true;
-  
   var bricks = [];
-
   var raven = new Image()
   raven.src = 'raven.png';
-
-  document.addEventListener("mousemove", mouseMoveHandler, false);
-  document.addEventListener("touchmove", mouseMoveHandler, false);
-
-  document.querySelector('#restart').addEventListener('click', restart)
-  document.querySelector('#pause').addEventListener('click', togglePause)
 
   function togglePause() {
     paused = !paused
@@ -76,6 +68,7 @@
     document.querySelector('#step').style.display = paused ? 'inline' : 'none'
     draw()
   }
+  document.querySelector('#pause').addEventListener('click', togglePause)
 
   document.querySelector('#step').addEventListener('click', () => {
     if (paused) { draw() }
@@ -99,8 +92,9 @@
       }
     } 
   }
+  document.querySelector('#restart').addEventListener('click', restart)
 
-  function mouseMoveHandler(e) {
+  function movePaddle(e) {
     if (e.targetTouches) { e = e.targetTouches[0] }
     
     var relativeX = (e.clientX - canvas.offsetLeft) * (canvas.width / canvas.offsetWidth);
@@ -108,20 +102,8 @@
       paddleX = relativeX - paddleWidth/2;
     }
   }
-  
-  function collisionDetection() {
-    for(var c=0; c<brickColumnCount; c++) {
-      for(var r=0; r<brickRowCount; r++) {
-        var b = bricks[c][r];
-        if(b.status == 1) {
-          if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
-            dy = -dy;
-            b.status = 0;
-          }
-        }
-      }
-    }
-  }
+  document.addEventListener("mousemove", movePaddle, false);
+  document.addEventListener("touchmove", movePaddle, false);
 
   function drawRaven() {
     ctx.drawImage(raven, x - 38, y - 12);
@@ -155,6 +137,20 @@
   
   function drawScore() {
     document.querySelector("#score").textContent = 'Ravens Freed: ' + ravens_freed + ' Ravens Harmed: ' + ravens_harmed 
+  }
+
+  function collisionDetection() {
+    for(var c=0; c<brickColumnCount; c++) {
+      for(var r=0; r<brickRowCount; r++) {
+        var b = bricks[c][r];
+        if(b.status == 1) {
+          if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+            dy = -dy;
+            b.status = 0;
+          }
+        }
+      }
+    }
   }
 
   function draw() {
