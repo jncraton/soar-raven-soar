@@ -64,6 +64,7 @@
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
   document.addEventListener("mousemove", mouseMoveHandler, false);
+  document.addEventListener("touchmove", mouseMoveHandler, false);
 
   document.querySelector('#restart').addEventListener('click', () => {
     restart()
@@ -76,7 +77,6 @@
     y = canvas.height-30;
     dx = difficulty * (1 + 2*Math.random());
     dy = difficulty * (-4 - dx);
-    console.log(difficulty,dx,dy)
     paddleX = (canvas.width-paddleWidth)/2;
 
     for(var c=0; c<brickColumnCount; c++) {
@@ -104,6 +104,8 @@
     }
   }
   function mouseMoveHandler(e) {
+    if (e.targetTouches) { e = e.targetTouches[0] }
+    
     var relativeX = (e.clientX - canvas.offsetLeft) * (canvas.width / canvas.offsetWidth);
     if(relativeX > 0 && relativeX < canvas.width) {
       paddleX = relativeX - paddleWidth/2;
