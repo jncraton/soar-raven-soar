@@ -24,7 +24,7 @@
   <section>
     <h1>Soar, Raven, Soar</h1>
     
-    <span id=lives></span>
+    <span id=score></span>
     
     <canvas id="myCanvas" width="480" height="480"></canvas>
 
@@ -54,17 +54,11 @@
   var brickPadding = 10;
   var brickOffsetTop = 30
   var brickOffsetLeft = 30;
-  var lives = 3;
   var color = "#f57920";
+  var ravens_harmed = 0;
+  var ravens_freed = 0;
   
   var bricks = [];
-  for(var c=0; c<brickColumnCount; c++) {
-    bricks[c] = [];
-    for(var r=0; r<brickRowCount; r++) {
-      bricks[c][r] = { x: 0, y: 0, status: 1 };
-    }
-  }
-
   restart()
 
   document.addEventListener("keydown", keyDownHandler, false);
@@ -84,6 +78,13 @@
     dy = difficulty * (-4 - dx);
     console.log(difficulty,dx,dy)
     paddleX = (canvas.width-paddleWidth)/2;
+
+    for(var c=0; c<brickColumnCount; c++) {
+      bricks[c] = [];
+      for(var r=0; r<brickRowCount; r++) {
+        bricks[c][r] = { x: 0, y: 0, status: 1 };
+      }
+    } 
   }
 
   function keyDownHandler(e) {
@@ -152,7 +153,7 @@
     }
   }
   function drawLives() {
-    document.querySelector("#lives").textContent = 'Lives: ' + lives
+    document.querySelector("#score").textContent = 'Ravens Freed: ' + ravens_freed + ' Ravens Harmed: ' + ravens_harmed 
   }
 
   function draw() {
@@ -167,22 +168,16 @@
       dx = -dx;
     }
     if(y < -100) {
-      alert("YOU WIN, CONGRATS!");
-      document.location.reload();
+      ravens_freed++
+      restart()
     }
     else if(y + dy > canvas.height-ballRadius) {
       if(x > paddleX && x < paddleX + paddleWidth) {
         dy = -dy;
       }
       else {
-        lives--;
-        if(!lives) {
-          alert("GAME OVER");
-          document.location.reload();
-        }
-        else {
-          restart()
-        }
+        ravens_harmed++
+        restart()
       }
     }
 
