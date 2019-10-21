@@ -16,7 +16,7 @@
   </nav>
   
   <section>
-    <img src="https://www.anderson.edu/wp-content/uploads/AU_logo_H_OBW-1.svg" alt="Anderson University" id="logo">
+    <img src="https://www.anderson.edu/wp-content/uploads/AU_logo_H_OBW-1.svg" alt="Anderson University" id=logo>
   </section>
 </header>
 
@@ -28,7 +28,9 @@
     
     <canvas id="myCanvas" width="480" height="400"></canvas>
 
-    Difficulty: <input name=difficulty value=3></input> <button id=restart>Restart</button>
+    Difficulty: <input name=difficulty value=2 size=5></input>
+
+    <button id=restart>Restart</button>
     <button id=pause>Pause</button>
     <button id=step>Step</button>
     
@@ -37,8 +39,6 @@
     </footer>
   </section>
 </article>
-
-<img style="display:none" id="raven" src="raven.png">
 
 <script>
   var x, y, dx, dy, paddleX;
@@ -62,6 +62,9 @@
   var paused = true;
   
   var bricks = [];
+
+  var raven = new Image()
+  raven.src = 'raven.png';
 
   restart()
   togglePause()
@@ -142,11 +145,10 @@
     }
   }
 
-  function drawBall() {
-    const raven = document.getElementById('raven');
-
+  function drawRaven() {
     ctx.drawImage(raven, x - 38, y - 12);
   }
+
   function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
@@ -178,7 +180,7 @@
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
-    drawBall();
+    drawRaven();
     drawPaddle();
     drawScore();
     collisionDetection();
