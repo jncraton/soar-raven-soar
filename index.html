@@ -29,6 +29,8 @@
     <canvas id="myCanvas" width="480" height="400"></canvas>
 
     Difficulty: <input name=difficulty value=1></input> <button id=restart>Restart</button>
+    <button id=pause>Pause</button>
+    <button id=step>Step</button>
     
     <footer>
       <span>Built with ❤️ using code from the <a href="https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript">Mozilla Foundation</a> and MDN contributors.</span>
@@ -57,17 +59,32 @@
   var color = "#f57920";
   var ravens_harmed = 0;
   var ravens_freed = 0;
+  var paused = true;
   
   var bricks = [];
+
   restart()
+  togglePause()
 
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
   document.addEventListener("mousemove", mouseMoveHandler, false);
   document.addEventListener("touchmove", mouseMoveHandler, false);
 
-  document.querySelector('#restart').addEventListener('click', () => {
-    restart()
+  document.querySelector('#restart').addEventListener('click', restart)
+  document.querySelector('#pause').addEventListener('click', togglePause)
+
+  function togglePause() {
+    paused = !paused
+    document.querySelector('#pause').innerHTML = paused ? 'Resume' : 'Pause'
+    document.querySelector('#step').style.display = paused ? 'inline' : 'none'
+    draw()
+  }
+
+  document.querySelector('#step').addEventListener('click', () => {
+    if (paused) { draw() }
+    console.clear()
+    console.log(`x: ${x}\ndx: ${dx}\ny: ${y}\ndy: ${dy}`)
   })
 
   function restart() {
@@ -75,8 +92,8 @@
   
     x = canvas.width/2;
     y = canvas.height-30;
-    dx = difficulty * (1 + 2*Math.random());
-    dy = difficulty * (-4 - dx);
+    dx = difficulty * Math.random();
+    dy = -(difficulty * difficulty - dx * dx)
     paddleX = (canvas.width-paddleWidth)/2;
 
     for(var c=0; c<brickColumnCount; c++) {
@@ -192,7 +209,10 @@
 
     x += dx;
     y += dy;
-    requestAnimationFrame(draw);
+    
+    if (!paused) {
+      requestAnimationFrame(draw);
+    }
   }
 
   draw();
