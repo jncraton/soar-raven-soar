@@ -152,7 +152,7 @@
       }
     }
   }
-  function drawLives() {
+  function drawScore() {
     document.querySelector("#score").textContent = 'Ravens Freed: ' + ravens_freed + ' Ravens Harmed: ' + ravens_harmed 
   }
 
@@ -161,7 +161,7 @@
     drawBricks();
     drawBall();
     drawPaddle();
-    drawLives();
+    drawScore();
     collisionDetection();
 
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
