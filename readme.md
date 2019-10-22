@@ -47,15 +47,16 @@ The value of the difficulty field is currently used in an unsafe way that can al
 
 We should change the way this field is handled to make it more secure.
 
-Difficulty Threshold
---------------------
+Clipping
+--------
 
-We currently allow very high difficulty values to be set. This breaks gameplay. Here's one example:
+We currently allow very high difficulty values to be set. This breaks gameplay by allowing the Raven to "clip" through objects. Here's one example:
 
 - Set the difficulty to 1000
 - Notice that your score now climbs rapidly. This is due to the fact that our basic physics engine was only designed to handle velocities up to a certain limit.
+- Try setting the difficulty to 20, pausing the game, and stepping through individual frames to get a better idea of what is happening.
 
-We should limit difficulty to reasonable values.
+We should limit difficulty to reasonable values to prevent this behavior.
 
 Learn More
 ==========
