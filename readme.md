@@ -104,6 +104,10 @@ We currently allow very high difficulty values to be set. This breaks gameplay b
 - Notice that your score now climbs rapidly. This is due to the fact that our basic physics engine was only designed to handle velocities up to a certain limit.
 - Try setting the difficulty to 20, pausing the game, and stepping through individual frames to get a better idea of what is happening.
 
+These sorts of clipping bugs are common in many games, include Super Mario 64:
+
+![Lobby Backwards Long Jump from Super Mario 64](https://s.aolcdn.com/hss/storage/midas/31b8713d4852b240c1b0a550db8ef165/205791583/BLJ.gif)
+
 We should limit difficulty to reasonable values to prevent this behavior.
 
 Learn More
