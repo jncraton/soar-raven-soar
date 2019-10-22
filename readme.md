@@ -48,19 +48,6 @@ var brickOffsetLeft = 20;
 var color = "#f57920";
 ```
 
-Continuous Deployment
----------------------
-
-This application can be forked and configured to build and deploy onto arbitrary hosting environments. We can set that up using Github and Netlify.
-
-1. Create a Github account.
-2. Navigate to this repository and press `Fork`.
-3. Browse to netlify.com and click "Sign up". Sign up using GitHub.
-4. Create a new site from Git and set the appropriate build options.
-5. Wait for the demployment to complete and view your live site.
-
-Now that you have CD configured, any changed that you push to your GitHub repository will be deployed in moments to a global content delivery network.
-
 Sprite Rotation
 ---------------
 
@@ -75,6 +62,21 @@ function drawRaven() {
   ctx.drawImage(raven_right, x - 38, y - 12);
 }
 ```
+
+Clipping
+--------
+
+We currently allow very high difficulty values to be set. This breaks gameplay by allowing the Raven to "clip" through objects. Here's one example:
+
+- Set the difficulty to 1000
+- Notice that your score now climbs rapidly. This is due to the fact that our basic physics engine was only designed to handle velocities up to a certain limit.
+- Try setting the difficulty to 20, pausing the game, and stepping through individual frames to get a better idea of what is happening.
+
+These sorts of clipping bugs are common in many games, include Super Mario 64:
+
+![Lobby Backwards Long Jump from Super Mario 64](https://s.aolcdn.com/hss/storage/midas/31b8713d4852b240c1b0a550db8ef165/205791583/BLJ.gif)
+
+We should limit difficulty to reasonable values to prevent this behavior.
 
 Security
 --------
@@ -95,20 +97,18 @@ We should change the way this field is handled to make it more secure.
 let difficulty = eval(document.querySelector('input[name=difficulty]').value)
 ```
 
-Clipping
---------
+Continuous Deployment
+---------------------
 
-We currently allow very high difficulty values to be set. This breaks gameplay by allowing the Raven to "clip" through objects. Here's one example:
+This application can be forked and configured to build and deploy onto arbitrary hosting environments. We can set that up using Github and Netlify.
 
-- Set the difficulty to 1000
-- Notice that your score now climbs rapidly. This is due to the fact that our basic physics engine was only designed to handle velocities up to a certain limit.
-- Try setting the difficulty to 20, pausing the game, and stepping through individual frames to get a better idea of what is happening.
+1. Create a Github account.
+2. Navigate to this repository and press `Fork`.
+3. Browse to netlify.com and click "Sign up". Sign up using GitHub.
+4. Create a new site from Git and set the appropriate build options.
+5. Wait for the demployment to complete and view your live site.
 
-These sorts of clipping bugs are common in many games, include Super Mario 64:
-
-![Lobby Backwards Long Jump from Super Mario 64](https://s.aolcdn.com/hss/storage/midas/31b8713d4852b240c1b0a550db8ef165/205791583/BLJ.gif)
-
-We should limit difficulty to reasonable values to prevent this behavior.
+Now that you have CD configured, any changed that you push to your GitHub repository will be deployed in moments to a global content delivery network.
 
 Learn More
 ==========
