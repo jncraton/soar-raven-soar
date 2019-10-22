@@ -7,9 +7,9 @@ This game is designed to provide several activities for high school students vis
 
 This game is available to play live:
 
-[![Game demo animation](media/demo.gif)](https://soar-raven-soar.netlify.com/)
-
 https://soar-raven-soar.netlify.com/
+
+[![Game demo animation](media/demo.gif)](https://soar-raven-soar.netlify.com/)
 
 Activities
 ==========
