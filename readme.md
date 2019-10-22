@@ -5,8 +5,6 @@ Soar, Raven, Soar ![The AU Raven](media/raven-right.png)
 
 This game is designed to provide several activities for high school students visiting the Anderson University Computer Science department.
 
- <iframe src="https://soar-raven-soar.netlify.com/"></iframe> 
- 
 This game is available to play live here:
 
 https://soar-raven-soar.netlify.com/
