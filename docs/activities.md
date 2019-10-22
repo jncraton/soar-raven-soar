@@ -1,10 +1,21 @@
+Simple Tweaks
+=============
+
+Various properties of the game can be easily adjusted to change gameplay. For example, any of the following can be easily changed:
+
+- Size of the paddle
+- Number of bricks
+- Size of bricks
+- Size of the Raven hitbox
+- Color of bricks and paddle
+
 Sprite Rotation
 ===============
 
 The Raven currently always faces the same direction. This should be adjusted so that he faces his current direction of travel.
 
-Difficulty Security
-===================
+Security
+========
 
 The value of the difficulty field is currently used in an unsafe way that can allow cheating. The following is one example of this unintended behavior:
 
