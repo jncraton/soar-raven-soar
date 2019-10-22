@@ -52,7 +52,9 @@ Sprite Rotation
 
 The raven currently always faces the same direction. This could be adjusted so that he faces his current direction of travel.
 
-Hint: There's already a flipped version of the raven sprite included in this project named `raven-left.png`.
+Hint: There's already a flipped version of the raven sprite included in this project named `raven-left.png`:
+
+![Raven facing left](media/raven-left.png)
 
 Security
 --------
