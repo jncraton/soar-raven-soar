@@ -25,6 +25,19 @@ Various properties of the game can be easily adjusted to change gameplay. For ex
 - Size of the Raven hitbox
 - Color of bricks and paddle
 
+Continuous Deployment
+---------------------
+
+This application can be forked and configured to build and deploy onto arbitrary hosting environments. We can set that up using Github and Netlify.
+
+1. Create a Github account.
+2. Navigate to this repository and press `Fork`.
+3. Browse to netlify.com and click "Sign up". Sign up using GitHub.
+4. Create a new site from Git and set the appropriate build options.
+5. Wait for the demployment to complete and view your live site.
+
+Now that you have CD configured, any changed that you push to your GitHub repository will be deployed in moments to a global content delivery network.
+
 Sprite Rotation
 ---------------
 
