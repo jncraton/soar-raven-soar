@@ -66,9 +66,15 @@ Sprite Rotation
 
 The raven currently always faces the same direction. This could be adjusted so that he faces his current direction of travel.
 
-Hint: There's already a flipped version of the raven sprite included in this project named `raven-left.png`:
+There's already a flipped version of the raven sprite included in this project named `raven-left.png`:
 
 ![Raven facing left](media/raven-left.png)
+
+```js
+function drawRaven() {
+  ctx.drawImage(raven_right, x - 38, y - 12);
+}
+```
 
 Security
 --------
@@ -84,6 +90,10 @@ The value of the difficulty field is currently used in an unsafe way that can al
 - Note how your score has changed
 
 We should change the way this field is handled to make it more secure.
+
+```js
+let difficulty = eval(document.querySelector('input[name=difficulty]').value)
+```
 
 Clipping
 --------
