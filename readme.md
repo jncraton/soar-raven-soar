@@ -11,6 +11,15 @@ https://soar-raven-soar.netlify.com/
 
 [![Game demo animation](media/demo.gif)](https://soar-raven-soar.netlify.com/)
 
+Getting Started
+===============
+
+In order to begin making changes to this game, you'll want to download the code to your device. The simplest way to do this is do download the code as a zip file from ![here](archive/master.zip) and extract it to a directory on your desktop. If you are already familiar with Git, you may wish to simply clone this repository as you normally would.
+
+Once you have the project on your computer, you should be able to open the file `index.html` and play the game.
+
+If everything is working properly, you can open `index.html` in a text editor and explore the code and begin making changes.
+
 Activities
 ==========
 
