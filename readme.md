@@ -34,6 +34,20 @@ Various properties of the game can be easily adjusted to change gameplay. For ex
 - Size of the Raven hitbox
 - Color of bricks and paddle
 
+```js
+var ravenHitbox = 12;
+var paddleHeight = 10;
+var paddleWidth = 75;
+var brickRowCount = 8;
+var brickColumnCount = 6;
+var brickWidth = 46;
+var brickHeight = 20;
+var brickPadding = 10;
+var brickOffsetTop = 30
+var brickOffsetLeft = 20;
+var color = "#f57920";
+```
+
 Continuous Deployment
 ---------------------
 
