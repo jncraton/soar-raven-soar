@@ -1,4 +1,4 @@
-Soar, Raven, Soar ![The AU Raven](media/raven-right.png)
+![The AU Raven](media/raven-right.png) Soar, Raven, Soar
 ========================================================
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/98c981b3-7bb6-4834-92ea-f8aea67465db/deploy-status)](https://app.netlify.com/sites/soar-raven-soar/deploys)
