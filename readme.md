@@ -5,7 +5,7 @@
 
 This game is designed to provide several activities for high school students visiting the Anderson University Computer Science department.
 
-This game is available to play live:
+You can play the game here:
 
 https://soar-raven-soar.netlify.com/
 
