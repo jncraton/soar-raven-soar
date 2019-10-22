@@ -12,7 +12,9 @@ Various properties of the game can be easily adjusted to change gameplay. For ex
 Sprite Rotation
 ===============
 
-The Raven currently always faces the same direction. This should be adjusted so that he faces his current direction of travel.
+The raven currently always faces the same direction. This could be adjusted so that he faces his current direction of travel.
+
+Hint: There's already a flipped version of the raven sprite included in this project named `raven-left.png`.
 
 Security
 ========

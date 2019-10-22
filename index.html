@@ -59,8 +59,14 @@
   var ravens_freed = 0;
   var paused = true;
   var bricks = [];
-  var raven = new Image()
-  raven.src = 'raven.png';
+
+  function load_image(src) {
+    img = new Image()
+    img.src = src
+    return img
+  }
+
+  raven_right = load_image('raven-right.png')
 
   function togglePause() {
     paused = !paused
@@ -106,7 +112,7 @@
   document.addEventListener("touchmove", movePaddle, false);
 
   function drawRaven() {
-    ctx.drawImage(raven, x - 38, y - 12);
+    ctx.drawImage(raven_right, x - 38, y - 12);
   }
 
   function drawPaddle() {
