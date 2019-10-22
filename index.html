@@ -44,7 +44,7 @@
   var x, y, dx, dy, paddleX;
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
-  var ballRadius = 12;
+  var ravenHitbox = 12;
   var paddleHeight = 10;
   var paddleWidth = 75;
   var brickRowCount = 8;
@@ -161,14 +161,14 @@
     drawScore();
     collisionDetection();
 
-    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+    if(x + dx > canvas.width-ravenHitbox || x + dx < ravenHitbox) {
       dx = -dx;
     }
     
     if(y < -100) {
       ravens_freed++
       restart()
-    } else if(y + dy > canvas.height-ballRadius) {
+    } else if(y + dy > canvas.height-ravenHitbox) {
       if(x > paddleX && x < paddleX + paddleWidth) {
         dy = -dy;
       }
