@@ -87,16 +87,22 @@
   
     x = canvas.width/2;
     y = canvas.height-30;
-    dx = difficulty * (2.5 + Math.random()) / 4;
-    dy = -(difficulty * difficulty - dx * dx)
     paddleX = (canvas.width-paddleWidth)/2;
+
+    dx=0
+    dy=0
 
     for(var c=0; c<brickColumnCount; c++) {
       bricks[c] = [];
       for(var r=0; r<brickRowCount; r++) {
         bricks[c][r] = { x: 0, y: 0, status: 1 };
       }
-    } 
+    }
+
+    setTimeout(() => {
+      dx = difficulty * (2.5 + Math.random()) / 4;
+      dy = -(difficulty * difficulty - dx * dx)
+    }, 1000) 
   }
   document.querySelector('#restart').addEventListener('click', restart)
 
@@ -181,9 +187,6 @@
       else {
         ravens_harmed++
         restart()
-        dx=0
-        dy=0
-        setTimeout(restart, 1000)
       }
     }
 
