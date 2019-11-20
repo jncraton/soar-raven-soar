@@ -180,14 +180,12 @@
     if(y < -100) {
       ravens_freed++
       restart()
-    } else if(y + dy > canvas.height-ravenHitbox) {
-      if(x > paddleX && x < paddleX + paddleWidth) {
+    } else if (y > canvas.height + 64) {
+      ravens_harmed++
+      restart()
+    } else if(y > canvas.height-ravenHitbox && y < canvas.height+ravenHitbox && 
+              x > paddleX && x < paddleX + paddleWidth && dy > 0 ) {
         dy = -dy;
-      }
-      else {
-        ravens_harmed++
-        restart()
-      }
     }
 
     x += dx;
