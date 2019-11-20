@@ -99,10 +99,11 @@
       }
     }
 
-    setTimeout(() => {
+    clearTimeout(restart.timer)
+    restart.timer = setTimeout(() => {
       dx = difficulty * (2.5 + Math.random()) / 4;
       dy = -(difficulty * difficulty - dx * dx)
-    }, 1000) 
+    }, 1000)
   }
   document.querySelector('#restart').addEventListener('click', restart)
 
@@ -167,10 +168,6 @@
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBricks();
-    drawRaven();
-    drawPaddle();
-    drawScore();
     collisionDetection();
 
     if(x + dx > canvas.width-ravenHitbox || x + dx < ravenHitbox) {
@@ -190,6 +187,11 @@
 
     x += dx;
     y += dy;
+
+    drawBricks();
+    drawRaven();
+    drawPaddle();
+    drawScore();
     
     if (!paused) {
       requestAnimationFrame(draw);
