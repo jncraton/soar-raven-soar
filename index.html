@@ -87,7 +87,7 @@
   
     x = canvas.width/2;
     y = canvas.height-30;
-    dx = difficulty * Math.random();
+    dx = difficulty * (2.5 + Math.random()) / 4;
     dy = -(difficulty * difficulty - dx * dx)
     paddleX = (canvas.width-paddleWidth)/2;
 
