@@ -110,6 +110,13 @@ This application can be forked and configured to build and deploy onto arbitrary
 
 Now that you have CD configured, any changed that you push to your GitHub repository will be deployed in moments to a global content delivery network.
 
+Creating a Bot
+--------------
+
+You could use the developer console (opened with Ctrl+Shift+I) to write a bot to play the game for you. One easy way to do this would be to create a function that sets the paddle position to position of the raven and call it regularly.
+
+Hint: You may want to take a look at [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
+
 Learn More
 ==========
 
