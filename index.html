@@ -140,11 +140,8 @@
       }
 
       function drawPaddle() {
-        ctx.beginPath()
-        ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight)
         ctx.fillStyle = color
-        ctx.fill()
-        ctx.closePath()
+        ctx.fillRect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight)
       }
 
       function drawBricks() {
