@@ -35,17 +35,17 @@ Various properties of the game can be easily adjusted to change gameplay. For ex
 - Color of bricks and paddle
 
 ```js
-var ravenHitbox = 12;
-var paddleHeight = 10;
-var paddleWidth = 75;
-var brickRowCount = 8;
-var brickColumnCount = 6;
-var brickWidth = 46;
-var brickHeight = 20;
-var brickPadding = 10;
-var brickOffsetTop = 30
-var brickOffsetLeft = 20;
-var color = "#f57920";
+const ravenHitbox = 12
+const paddleHeight = 10
+const paddleWidth = 75
+const brickRowCount = 8
+const brickColumnCount = 6
+const brickWidth = 46
+const brickHeight = 20
+const brickPadding = 10
+const brickOffsetTop = 30
+const brickOffsetLeft = 20
+const color = '#f57920'
 ```
 
 Sprite Rotation
@@ -59,7 +59,7 @@ There's already a flipped version of the raven sprite included in this project n
 
 ```js
 function drawRaven() {
-  ctx.drawImage(raven_right, x - 38, y - 12);
+  ctx.drawImage(ravenRight, x - 38, y - 12)
 }
 ```
 
@@ -84,7 +84,7 @@ Security
 The value of the difficulty field is currently used in an unsafe way that can allow cheating. The following is one example of this unintended behavior:
 
 - Pause the game
-- Enter `ravens_freed=1000` in the difficulty field
+- Enter `ravensFreed=1000` in the difficulty field
 - Press `Restart`
 - Enter `3` for the difficulty
 - Press `Restart`
