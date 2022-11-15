@@ -1,0 +1,12 @@
+{
+  "undef": true,
+  "unused": true,
+  "asi": true,
+  "browser": true,
+  "esversion": 6,
+  "evil": true,
+  "camelcase": true,
+  "globals": {
+    "console": true
+  }
+}
