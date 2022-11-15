@@ -152,11 +152,8 @@
               const brickY = c * (brickHeight + brickPadding) + brickOffsetTop
               bricks[c][r].x = brickX
               bricks[c][r].y = brickY
-              ctx.beginPath()
-              ctx.rect(brickX, brickY, brickWidth, brickHeight)
               ctx.fillStyle = color
-              ctx.fill()
-              ctx.closePath()
+              ctx.fillRect(brickX, brickY, brickWidth, brickHeight)
             }
           }
         }
