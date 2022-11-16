@@ -106,7 +106,7 @@ This application can be forked and configured to build and deploy onto arbitrary
 2. Navigate to this repository and press `Fork`.
 3. Browse to netlify.com and click "Sign up". Sign up using GitHub.
 4. Create a new site from Git and set the appropriate build options.
-5. Wait for the demployment to complete and view your live site.
+5. Wait for the deployment to complete and view your live site.
 
 Now that you have CD configured, any changes that you push to your GitHub repository will be deployed in moments to a global content delivery network.
 
@@ -120,6 +120,6 @@ Hint: You may want to take a look at [setInterval](https://developer.mozilla.org
 Learn More
 ==========
 
-The inner workings of this application are based around the Javascript [breakout game tutorial](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript) available from Mozilla. Walking through that tutorial step by step will give you a stronger sense for how this game functions.
+The inner workings of this application are based around the JavaScript [breakout game tutorial](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript) available from Mozilla. Walking through that tutorial step by step will give you a stronger sense for how this game functions.
 
 There are also several other [web game development tutorials](https://developer.mozilla.org/en-US/docs/Games/Tutorials) available from Mozilla if you are ready to go deeper.
