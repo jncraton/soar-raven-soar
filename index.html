@@ -54,8 +54,8 @@
     <script>
       const paddleHeight = 10
       const paddleWidth = 75
-      const brickRowCount = 8
-      const brickColumnCount = 6
+      const brickColumns = 8
+      const brickRows = 6
       const brickWidth = 46
       const brickHeight = 20
       const brickPadding = 10
@@ -107,9 +107,9 @@
         dx = 0
         dy = 0
 
-        for (let c = 0; c < brickColumnCount; c++) {
+        for (let c = 0; c < brickRows; c++) {
           bricks[c] = []
-          for (let r = 0; r < brickRowCount; r++) {
+          for (let r = 0; r < brickColumns; r++) {
             bricks[c][r] = {x: 0, y: 0, status: 1}
           }
         }
@@ -146,8 +146,8 @@
       }
 
       function drawBricks() {
-        for (let c = 0; c < brickColumnCount; c++) {
-          for (let r = 0; r < brickRowCount; r++) {
+        for (let c = 0; c < brickRows; c++) {
+          for (let r = 0; r < brickColumns; r++) {
             if (bricks[c][r].status == 1) {
               const brickX = r * (brickWidth + brickPadding) + brickOffsetLeft
               const brickY = c * (brickHeight + brickPadding) + brickOffsetTop
@@ -167,8 +167,8 @@
 
       function collisionDetection() {
         // Handle brick collisions
-        for (let c = 0; c < brickColumnCount; c++) {
-          for (let r = 0; r < brickRowCount; r++) {
+        for (let c = 0; c < brickRows; c++) {
+          for (let r = 0; r < brickColumns; r++) {
             const b = bricks[c][r]
             if (b.status == 1) {
               if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
