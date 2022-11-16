@@ -52,9 +52,6 @@
     </article>
 
     <script>
-      const canvas = document.getElementById('myCanvas')
-      const ctx = canvas.getContext('2d')
-      const ravenHitbox = 12
       const paddleHeight = 10
       const paddleWidth = 75
       const brickRowCount = 8
@@ -65,12 +62,16 @@
       const brickOffsetTop = 30
       const brickOffsetLeft = 20
       const color = '#f57920'
-      const bricks = []
+      const ravenHitbox = 12
+
+      const canvas = document.getElementById('myCanvas')
+      const ctx = canvas.getContext('2d')
 
       let x, y, dx, dy, paddleX
       let paused = true
       let ravensHarmed = 0
       let ravensFreed = 0
+      let bricks = []
 
       function loadImage(src) {
         const img = new Image()
