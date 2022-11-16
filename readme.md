@@ -35,17 +35,17 @@ Various properties of the game can be easily adjusted to change gameplay. For ex
 - Color of bricks and paddle
 
 ```js
-const ravenHitbox = 12
 const paddleHeight = 10
 const paddleWidth = 75
-const brickRowCount = 8
-const brickColumnCount = 6
+const brickColumns = 8
+const brickRows = 6
 const brickWidth = 46
 const brickHeight = 20
 const brickPadding = 10
 const brickOffsetTop = 30
 const brickOffsetLeft = 20
 const color = '#f57920'
+const ravenHitbox = 12
 ```
 
 Sprite Rotation
