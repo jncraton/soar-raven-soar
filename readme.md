@@ -108,7 +108,7 @@ This application can be forked and configured to build and deploy onto arbitrary
 4. Create a new site from Git and set the appropriate build options.
 5. Wait for the demployment to complete and view your live site.
 
-Now that you have CD configured, any changed that you push to your GitHub repository will be deployed in moments to a global content delivery network.
+Now that you have CD configured, any changes that you push to your GitHub repository will be deployed in moments to a global content delivery network.
 
 Creating a Bot
 --------------
