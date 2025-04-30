@@ -5,11 +5,10 @@
 
 This game is designed to provide several activities for high school students visiting the Anderson University Computer Science department.
 
-You can play the game here:
+[Play Game](https://jncraton.github.io/soar-raven-soar/)
 
-https://soar-raven-soar.netlify.com/
-
-[![Game demo animation](media/demo.gif)](https://soar-raven-soar.netlify.com/)
+[![Game demo animation](media/demo.gif)](https://jncraton.github.io/soar-raven-soar/
+)
 
 Getting Started
 ===============
