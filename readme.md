@@ -1,8 +1,6 @@
 ![The AU Raven](media/raven-right.png) Soar, Raven, Soar
 ========================================================
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/98c981b3-7bb6-4834-92ea-f8aea67465db/deploy-status)](https://app.netlify.com/sites/soar-raven-soar/deploys)
-
 This game is designed to provide several activities for high school students visiting the Anderson University Computer Science department.
 
 [Play Game](https://jncraton.github.io/soar-raven-soar/)
